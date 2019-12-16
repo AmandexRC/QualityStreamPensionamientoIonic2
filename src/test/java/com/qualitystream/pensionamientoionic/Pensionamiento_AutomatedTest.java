@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 
 public class Pensionamiento_AutomatedTest {
 
@@ -73,8 +74,18 @@ public class Pensionamiento_AutomatedTest {
 		Thread.sleep(3000);
 		System.out.println("no da");
 
-		
-	if(driver.findElement(By.xpath("//form [@class='form ng-untouched ng-pristine ng-invalid']")).isDisplayed()){
+		WebElement searchInput = driver.findElement(By.id("siguiente"));
+
+		String value = searchInput.getText();
+
+		System.out.println(value);
+
+		Assert.assertEquals(value, "SIGUIENTE");
+
+
+
+
+		if(driver.findElement(By.xpath("//form [@class='form ng-untouched ng-pristine ng-invalid']")).isDisplayed()){
     	
 			//driver.findElement(pr_email).sendKeys("admin@gmail.com");
 		
@@ -93,7 +104,8 @@ public class Pensionamiento_AutomatedTest {
 		
 		System.out.println("si da");
         //assertEquals(preregisterTitle, "Ionic App");
-		}else{
+			}else
+				{
 			System.out.println("Pre-register page was not found");
 			}
 			
@@ -129,6 +141,6 @@ public class Pensionamiento_AutomatedTest {
 		
 	}*/
 
-	@After
-	public void tearDown() throws Exception {driver.quit();}
+//	@After
+//	public void tearDown() throws Exception {driver.quit();}
 }

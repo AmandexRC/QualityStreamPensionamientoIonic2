@@ -26,7 +26,7 @@ public void login()  {
 	email.sendKeys("adminofi@gmail.com");
 	WebElement password = driver.findElement(By.xpath("//input [@name='ion-input-1']"));
 	password.sendKeys("admin-123");
-	WebElement boton=driver.findElement(By.id("login"));
+	WebElement boton=driver.findElement(By.name("sub"));
 	boton.click();
 	System.out.println("no da");
 	//assertEquals(driver.getTitle(), "Ionic App");
