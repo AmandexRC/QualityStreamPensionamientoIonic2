@@ -37,7 +37,7 @@ public class GoogleSearchTest {
 		//tiempo de espera, tiempo de carga de busqueda
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		//chequear resultados de la busqueda, el nombre estara en el titulo de pagina 
-		assertEquals("quality-stream",driver.getTitle());
+		assertEquals("quality-stream - Buscar con Google",driver.getTitle());
 	}
 	
 	@After

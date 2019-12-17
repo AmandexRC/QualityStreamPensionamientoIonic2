@@ -9,17 +9,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import static org.junit.Assert.assertEquals;
 
 public class PackageTest {
 	private WebDriver driver;
 	
 	@Before
-
 	public void setUp() throws Exception {
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.get("http://localhost:8100");}
+		driver.get("http://localhost:8100");
+	}
+
 @Test
 public void login()  {
 	WebElement email = driver.findElement(By.xpath("//input [@name='ion-input-0']"));
